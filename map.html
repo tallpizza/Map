@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0" />
+    <script src="leaflet/leaflet.js"></script>
+    <script src="markercluster/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <link rel="stylesheet" href="markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="markercluster/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Maps OOB</title>
+
+    <style>
+        #map {
+            height: 80vh;
+            width: 80vw;
+            margin: 5rem auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div id="Ajax"> -->
+    <!-- <input type="button" onclick="xmlrequest()">
+        <input type="button" onclick="refresh()" value="refresh_map"> -->
+    <!-- <div>
+        <input type="text" id="name" placeholder="이름">
+        <input type="text" id = "dong" placeholder="--동">
+        <input type="button" value="submit" onclick="senddata()">
+        <p>
+            <a href="list.html">목록</a>
+        </p>
+    </div>
+    </div>
+    <p id="JSON"></p> -->
+    <div id="map">
+    </div>
+    <button id="inputbutton">input</button>
+    <div class="inputbackground" id="inputbackground">
+    </div>
+    <div class="inputbox" id="inputbox">
+
+        <input type="text"  id="name" placeholder="이름">
+        <input type="text"  id="dong" placeholder="--동">
+        <input type="button" id="submit" value="submit" onclick="senddata()">
+
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

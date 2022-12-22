@@ -1,0 +1,30 @@
+[
+    {
+        "type": "Feature",
+        "properties": {
+            "name": "김상연",
+            "popupContent": "새로운사람 만나는걸 좋아합니당"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                126.99404,
+                37.75621
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "name": "김상연",
+            "popupContent": "새로운사람 만나는걸 좋아합니당"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                126.99604,
+                37.75621
+            ]
+        }
+    }
+]

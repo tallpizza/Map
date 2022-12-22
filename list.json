@@ -3,13 +3,27 @@
         "type": "Feature",
         "properties": {
             "name": "김상연",
-            "popupContent": "새로운사람 만나는걸 좋아합니당"
+            "popupContent": "하잉ㅇ"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [
-                126.99404,
-                37.75621
+                "127.160914378",
+                "37.615288279"
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "name": "아보트",
+            "popupContent": "사무실"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                "126.920918453",
+                "37.548038795"
             ]
         }
     },
@@ -17,13 +31,27 @@
         "type": "Feature",
         "properties": {
             "name": "김상연",
-            "popupContent": "새로운사람 만나는걸 좋아합니당"
+            "popupContent": "항ㅇㅇㅇ🕹️"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [
-                126.99604,
-                37.75621
+                "127.121891294",
+                "37.646178331"
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "name": "YD",
+            "popupContent": "항ㅇㅇㅇ🕹️"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                "127.120569078",
+                "37.650230095"
             ]
         }
     }

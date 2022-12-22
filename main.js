@@ -49,19 +49,21 @@ document.getElementById('inputbutton').addEventListener('click', function(){
 // function to send data to server and get data from server
 let senddata = function() {
     let name = document.getElementById('name').value;
+    let discription = document.getElementById('discription').value;
     let dong = document.getElementById('dong').value;
 
     let data = new FormData
     data.append("func","save_data")
     data.append("name",name)
+    data.append("discription", discription)
     data.append("dong",dong)
-    fetch("http://182.222.233.17/MapOOB/getlatlang.php",{
+    fetch("getlatlang.php",{
         method : 'POST',
         body:data
     })
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
-        load_Data()
+        window.location.reload()
     })
 }

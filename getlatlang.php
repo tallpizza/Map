@@ -68,7 +68,8 @@ function _save_data()
                 "type" => "Feature",
                 "properties" => array(
                     "name" => $_POST['name'],
-                    "popupContent" => $_POST['discription']
+                    "popupContent" => $_POST['discription'],
+                    "location"=>$_POST['dong']
                 ),
                 "geometry" => array(
                     "type" => "Point",
@@ -96,6 +97,21 @@ function _save_data()
     }
 }
 
+$services['delete_feature'] = "_delete_feature";
+function _delete_feature(){
+    $index = $_POST['index'];
+    // error_log($index);
+
+
+    $file = 'list.json';
+    $listfile = file_get_contents($file);
+    $jlistfile = json_decode($listfile);
+
+    array_splice($jlistfile, $index,1);
+    $edit_json_data = json_encode($jlistfile,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+    file_put_contents($file,$edit_json_data);
+    outputJSON("Delete Success!","success");
+}
 
 
 $func = isset($_POST['func']) ? $_POST['func'] : null;

@@ -3,69 +3,14 @@
         "type": "Feature",
         "properties": {
             "name": "김상연",
-            "popupContent": "하잉ㅇ"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                "127.160914378",
-                "37.615288279"
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "name": "아보트",
-            "popupContent": "사무실"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                "126.920918453",
-                "37.548038795"
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "name": "김상연",
-            "popupContent": "항ㅇㅇㅇ🕹️"
+            "popupContent": "안녕하세요오! 😎",
+            "location": "별내동"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [
                 "127.121891294",
                 "37.646178331"
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "name": "YD",
-            "popupContent": "항ㅇㅇㅇ🕹️"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                "127.120569078",
-                "37.650230095"
-            ]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "name": "김상연",
-            "popupContent": "하잉ㅇ"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                "127.077803525",
-                "37.494102040"
             ]
         }
     }

@@ -76,3 +76,51 @@ let senddata = function() {
         
     })
 }
+
+let remove = (index)=>{
+    let data = new FormData
+    data.append("func","delete_feature")
+    data.append("index",index)
+    fetch('getlatlang.php',{
+        method: 'POST',
+        body:data
+    })
+    .then(response=>response.json())       
+    .then(data=>{
+        if (data['status'] == 'success'){
+            markers.clearLayers();
+            load_Data()
+
+            window.alert("성공!😎")
+            window.location.reload()
+        }
+        else {
+            window.alert("오류가 발생했어요😥")
+        }
+    })
+}
+
+let get_location_list = ()=>{
+    fetch('list.json')
+    .then(response=>response.json())
+    .then(data=>{
+        console.log(data)
+        data.forEach((feature,index)=>{
+            document.getElementById('delete_box').innerHTML += 
+            feature['properties']['name']+" : "+feature['properties']['location'] 
+            +"<input type='button' value='delete' onclick = 'remove("+index+")'><br>"
+        })
+    })
+}
+
+document.getElementById('delbutton').addEventListener('click', function(){
+    document.getElementById('delete_background').style.display = 'block';
+    document.getElementById('delete_box').style.display = 'flex';
+    get_location_list()
+})
+// if inputbackground is clicked, display none the inputbackground
+document.getElementById('delete_background').addEventListener('click', function(){
+    document.getElementById('delete_background').style.display = 'none';
+    document.getElementById('delete_box').style.display = 'none';
+    document.getElementById('delete_box').innerHTML = ""
+})

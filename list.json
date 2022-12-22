@@ -54,5 +54,19 @@
                 "37.650230095"
             ]
         }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "name": "김상연",
+            "popupContent": "하잉ㅇ"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                "127.077803525",
+                "37.494102040"
+            ]
+        }
     }
 ]

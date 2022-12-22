@@ -1,9 +1,9 @@
+let markers = null
 
 function load_Data(){
     fetch('list.json')
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         
         let points = new L.geoJson(data,{
             onEachFeature: function (feature, layer) {
@@ -14,7 +14,7 @@ function load_Data(){
             
         });
         
-        let markers = L.markerClusterGroup({
+        markers = L.markerClusterGroup({
         spiderfyOnMaxZoom:true,
     });
     
@@ -63,7 +63,16 @@ let senddata = function() {
     })
     .then(response=>response.json())
     .then(data=>{
-        console.log(data)
-        window.location.reload()
+        if (data['status'] == 'success'){
+            markers.clearLayers();
+            load_Data()
+
+            window.alert("성공!😎")
+            window.location.reload()
+        }
+        else {
+            window.alert("주소를 확인해주세요😥")
+        }
+        
     })
 }

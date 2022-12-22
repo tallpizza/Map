@@ -3,15 +3,13 @@ body {
     margin: 0;
 }
 #map {
-    height: 90vh;
-    width: 90vw;
-}
-u {
-    cursor: pointer; cursor: hand;
+    height: 70vh;
+    width: 98vw;
 }
 
+
 #inputbackground {
-    /* display:none; */
+    display:none;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -21,15 +19,49 @@ u {
     background-color: rgba(0, 0, 0, 0.3);
 }
 #inputbox {
-    /* display:none; */
+    display:none;
     position: absolute;
-    display: flex;
     flex-direction: column;
+    align-items: center;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70vw;
-    height: 70vh;
+    /* height: 70vh; */
+    z-index: 2000;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-family: Roboto;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+
+#delete_background {
+    display:none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#delete_box{
+    display:none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    /* height: 70vh; */
     z-index: 2000;
     background-color: #fff;
     padding: 5px;
@@ -42,14 +74,14 @@ u {
 }
 
 #name, #dong, #discription {
-    width: 70%;
+    width: 98%;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 
 #submit {
-    width: 10vw;
+    width: 7em;
     max-width: 200px;
-    margin-left: 60%;
+    margin : 0 0 auto auto
 }

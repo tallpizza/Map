@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="oob_favicon.ico">
     <script src="leaflet/leaflet.js"></script>
     <script src="markercluster/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="leaflet/leaflet.css" />
@@ -25,32 +26,25 @@
 </head>
 
 <body>
-    <!-- <div id="Ajax"> -->
-    <!-- <input type="button" onclick="xmlrequest()">
-        <input type="button" onclick="refresh()" value="refresh_map"> -->
-    <!-- <div>
-        <input type="text" id="name" placeholder="이름">
-        <input type="text" id = "dong" placeholder="--동">
-        <input type="button" value="submit" onclick="senddata()">
-        <p>
-            <a href="list.html">목록</a>
-        </p>
+    <div style="display:flex; flex-direction: column; height:100vh; width : 100vw;">
+        <div id="map"></div>
+        <div style="display:flex">
+            <button id="delbutton" style="width:60vw; height:30px;margin : auto auto 50px 10vw;">delete</button>
+            <button id="inputbutton" style="width:60vw; height:30px;margin : auto 10vw 50px auto;">input</button>
+        </div>
     </div>
-    </div>
-    <p id="JSON"></p> -->
-    <div id="map">
-    </div>
-    <button id="inputbutton">input</button>
-    <div class="inputbackground" id="inputbackground">
-    </div>
-    <div class="inputbox" id="inputbox">
 
+
+    <div id="inputbackground"></div>
+    <div id="inputbox">
         <input type="text"  id="name" placeholder="이름">
         <input type="text"  id="discription" placeholder="소개">
         <input type="text"  id="dong" placeholder="--시 --동">
         <input type="button" id="submit" value="submit" onclick="senddata()">
-
     </div>
+
+    <div id="delete_background"></div>
+    <div id="delete_box"></div>
 
 
     <script src="main.js"></script>

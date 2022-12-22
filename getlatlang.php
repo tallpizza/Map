@@ -17,12 +17,12 @@ $services['save_data'] = "_save_data";
 function _save_data()
 {
     $str = $_POST['dong'];
-    error_log(mb_detect_encoding($str,array('UTF-8','EUC-KR')));
+    // error_log(mb_detect_encoding($str,array('UTF-8','EUC-KR')));
 
     preg_match('/([가-힣]+\d*[시도군구동읍면리로]+\s*)*/', $str, $sigu);
     if (isset($sigu[0]) == true) {
         $nospace = str_replace(" ","%20",$str);
-        error_log($nospace);
+        // error_log($nospace);
 
         ### 주소로 검색
         $url = "http://api.vworld.kr/req/search?service=search&request=search&version=2.0&crs=EPSG:4326&size=10&page=1&query=".$nospace."&type=address&category=road&format=json&errorformat=json&key=96C113B7-156D-391E-96CC-12A157128F72";
@@ -30,7 +30,7 @@ function _save_data()
         $res = file_get_contents($url);
         $resj = json_decode($res);
 
-        error_log($res);
+        // error_log($res);
 
 
         ### 행정구역으로 검색
@@ -87,7 +87,7 @@ function _save_data()
             file_put_contents($file, $data_to_save);
 
             outputJSON("Data Added successfully \n lat : " . $lat . "\n long:  " . $long, 'success');
-        } elseif ($resj->response->status == "ERROR") {
+        } else{
             outputJSON("Data received but wrong address");
         }
     } else {

@@ -1,7 +1,10 @@
 let markers = null
 
 function load_Data(){
-    fetch('list.json')
+    fetch('list.json',{
+        method:'POST',
+        chche:'no-store'
+    })
     .then(response => response.json())
     .then(data => {
         
@@ -68,7 +71,7 @@ let senddata = function() {
             load_Data()
 
             window.alert("성공!😎")
-            window.location.reload()
+            window.location.reload(true)
         }
         else {
             window.alert("주소를 확인해주세요😥")
@@ -92,7 +95,7 @@ let remove = (index)=>{
             load_Data()
 
             window.alert("성공!😎")
-            window.location.reload()
+            window.location.reload(true)
         }
         else {
             window.alert("오류가 발생했어요😥")

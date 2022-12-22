@@ -4,32 +4,32 @@ function responseJSON($msg) {
     die(json_encode($msg));
 }
 
-// function generatinggps($address){
-//     // preg_match('/[가-힣]+로\s*(\d+길)*\s*\d+/', $address, $list);
-//     preg_match('/([가-힣]+시\s)*([가-힣]+구\s)*[가-힣]+\d*로\s*(\d+길)*\s*\d+/', $address, $sigu);
-//     if (isset($sigu[0]) == true){
-//     $nospace =str_replace(" ","",$sigu[0]);
+function generatinggps($address){
+    // preg_match('/[가-힣]+로\s*(\d+길)*\s*\d+/', $address, $list);
+    preg_match('/([가-힣]+시\s)*([가-힣]+구\s)*[가-힣]+\d*로\s*(\d+길)*\s*\d+/', $address, $sigu);
+    if (isset($sigu[0]) == true){
+    $nospace =str_replace(" ","",$sigu[0]);
 
-//     $url = "http://api.vworld.kr/req/search?service=search&request=search&version=2.0&crs=EPSG:4326&size=10&page=1&query=".$nospace."&type=address&category=road&format=json&errorformat=json&key=13397C34-E345-3387-8F4C-8FDECB608764";
+    $url = "http://api.vworld.kr/req/search?service=search&request=search&version=2.0&crs=EPSG:4326&size=10&page=1&query=".$nospace."&type=address&category=road&format=json&errorformat=json&key=13397C34-E345-3387-8F4C-8FDECB608764";
 
-//     $res = file_get_contents($url);
-//     $resj = json_decode($res);
+    $res = file_get_contents($url);
+    $resj = json_decode($res);
 
-//     if ($resj->response->status == "OK"){
+    if ($resj->response->status == "OK"){
 
-//         $x = $resj->response->result->items[0]->point->x;
-//         $y = $resj->response->result->items[0]->point->y;
+        $x = $resj->response->result->items[0]->point->x;
+        $y = $resj->response->result->items[0]->point->y;
 
-//         $latlong = array($x, $y);
-//         $GLOBALS["latlng"]= $latlong;
-//     } else {
-//         return;
-//     }
-//     } else {
-//         responseJSON("주소확인필요");
-//         return;
-//     }
-// }
+        $latlong = array($x, $y);
+        $GLOBALS["latlng"]= $latlong;
+    } else {
+        return;
+    }
+    } else {
+        responseJSON("주소확인필요");
+        return;
+    }
+}
 
 $data = exec('wget --no-check-certificate -l 0 --http-user=notify --http-passwd=6cd6f41455d78245f1295895838dd1ec14449565a9a8c1c8ea43cb35b592e3ab --post-data "func=get_gps" https://iot.anhive.net/w00/login_service.php -O -');
 
